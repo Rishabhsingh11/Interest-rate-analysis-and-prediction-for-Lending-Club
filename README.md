@@ -105,6 +105,7 @@ Now, we have visualized the Dataset with a few charts and graphs post analysis t
 Coefficient score of lassoCV –
 
  ![image](/image/image14.jpg)
+ 
 We have run the below code for all the three algorithms and calculated Average Error, Accuracy, MAPE and RSquare Score:
 error_train = mean_absolute_error(y_train_linear,prediction_train)
 error_test = mean_absolute_error(y_test_linear,prediction_test)

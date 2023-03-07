@@ -23,15 +23,18 @@ Shubham Singh (002762502)
 3.	You are charged $7 if you pay by check. Late payment fee is 5% or the unpaid instalment amount or $15, whichever is greater.
 •	Motivation: With the rising popularity of peer-to-peer lending platforms in recent years, investors now have easy access to this alternative investment asset class by lending money to individual borrowers through platforms such as Lending Club, Prosper Marketplace, and Upstart, or to small businesses through Funding Circle. The process starts with borrowers submitting loan applications to the platform, which performs credit reviews and either approves or denies each application. Investors should be able to promptly and independently evaluate the credit risk of many listed loans to invest in loans with lower perceived risks. The platform also uses a proprietary model to determine the interest rate of approved loans based on the creditworthiness of borrowers. Approved loans are then listed on the platform for investor funding. Investors usually want to diversify their portfolio by only investing a small amount, e.g. $25, in each loan. Hence, it is desirable for investors to be able to independently evaluate the credit risk of many listed loans quickly and invest in those with lower perceived risks. This motivates us to develop machine-learned classification and regression models, from which we will choose the model with the highest accuracy and lowest MAPE, which can be used to assess and estimate the interest rate using a historical loan dataset from Lending Club.
 
-# Goal: This project aims to create a machine learning model that can predict the best interest rate for a given set of parameters using transactional loan data from Lending Club.
+# Goal: 
+This project aims to create a machine learning model that can predict the best interest rate for a given set of parameters using transactional loan data from Lending Club.
 
 # Methodology
 To develop the interest rate classification and regression model we need to follow the below-mentioned machine learning process which includes:
-1)	Data Collection: In this step, we looked through many online dataset sources to find the most pertinent dataset that matched the project's goal and had a large enough data set to assist the learning and development of the machine learning model. We have used the Kaggle dataset of Lending Club Loan data. The file is a matrix that includes a total of 151 variables and about 2260701 observations. Also, The Total Missing Values in Dataset is 108486249.The Description of the Dataset will be further explained in details in the next section.
+## Data Collection : 
+In this step, we looked through many online dataset sources to find the most pertinent dataset that matched the project's goal and had a large enough data set to assist the learning and development of the machine learning model. We have used the Kaggle dataset of Lending Club Loan data. The file is a matrix that includes a total of 151 variables and about 2260701 observations. Also, The Total Missing Values in Dataset is 108486249.The Description of the Dataset will be further explained in details in the next section.
 
-2)	Data Exploration and Preparation: While exploring the dataset we came to an understanding that we have a large number of records and features with many discrepancies and to fix the noise we have performed data cleaning and pre-processing using python libraries such as NumPy, pandas. 
+## Data Exploration and Preparation: 
+While exploring the dataset we came to an understanding that we have a large number of records and features with many discrepancies and to fix the noise we have performed data cleaning and pre-processing using python libraries such as NumPy, pandas. 
 
-We have followed below steps for Data Cleaning and Pre-processing:
+### We have followed below steps for Data Cleaning and Pre-processing:
 •	Initially we have read the csv file into a DataFrame and post understanding the DataFrame we have selected a set of 65 features which were relevant to our Model.
 •	Since then, we've eliminated features with null/NaN values greater than 50%. In order to do this, we made two empty lists and added the columns with more than 50% of null values to columns_with_more_null and the remaining columns to coulmns_with_data, after which we removed the columns with more null values from the DataFrame.
 •	We have then categorized the DataFrame into Numeric Columns and Categorical Columns by using select_dtypes function of a DataFrame. If the dtype is either ‘int64’ or ‘float’ then we will store it in numeric_columns and if dtype is ‘object’ then we will store it in categorical_columns. 
@@ -49,7 +52,8 @@ We have followed below steps for Data Cleaning and Pre-processing:
 •	Lasso (“Least Absolute shrinkage and selection operator”) is a regression analysis method that performs both variable selection and regularization in order to enhance the prediction accuracy and interpretability of the statistical model it produces. The data is then categorized into three sets and treated differently: train, test and CV. We then split the data into dependent and independent variables to perform lasso CV for variable selection. Thus, we have successfully implemented feature selection by performing dimension reduction using LassoCV. At the end, we have used lassoCV algorithm for feature selection and dropping columns having zero coefficient.
  ![image](/image/image3.png)
 
-3)	Modelling and Evaluation: Once we have a clean dataset with all the necessary features and records with values, we performed a test-train split on it to train various models, compare their accuracies, and use the metrics MAPE (Mean Absolute Percentage Error), MSE (Mean Squared Error), Accuracy Score and R2 Square to choose the model that fits the test dataset the best. The models that we will use are as follows:
+## Modelling and Evaluation: 
+Once we have a clean dataset with all the necessary features and records with values, we performed a test-train split on it to train various models, compare their accuracies, and use the metrics MAPE (Mean Absolute Percentage Error), MSE (Mean Squared Error), Accuracy Score and R2 Square to choose the model that fits the test dataset the best. The models that we will use are as follows:
 •	Linear Regression: Linear Regression is a machine learning algorithm based on supervised learning. It performs a regression task. Regression models a target prediction value based on independent variables. It is mostly used for finding out the relationship between variables and forecasting. Linear regression is a statistical approach for modelling the relationship between a dependent variable with a given set of independent variables. Thus, linear regression technique finds out a linear relationship between x (input) and y (output). It is used to predict a quantitative response Y from the predictor variable X. It is made with an assumption that there's a linear relationship between X and Y. The equation of the above line is: Y= mx + b Where b is the intercept and m is the slope of the line. So basically, the linear regression algorithm gives us the most optimal value for the intercept and the slope (in two dimensions). The y and x variables remain the same, since they are the data features and cannot be changed. The values that we can control are the intercept (b) and slope (m). There can be multiple straight lines depending upon the values of intercept and slope. Basically, what the linear regression algorithm does is it fits multiple lines on the data points and returns the line that results in the least error. This same concept can be extended to cases where there are more than two variables. This is called multiple linear regression. For instance, consider a scenario where you have to predict the price of the house based upon its area, number of bedrooms, the average income of the people in the area, the age of the house, and so on. In this case, the dependent variable (target variable) is dependent upon several independent variables. We have Performed Linear Regression with a test_size of 30% and keeping the random state as 42, we have used both test prediction and train prediction for Error and MAPE calculation.
 
  ![image](/image/image4.png)
@@ -62,7 +66,7 @@ We have followed below steps for Data Cleaning and Pre-processing:
 
  ![image](/image/image6.png)
 
-Description of Dataset:
+### Description of Dataset:
 Link - https://www.kaggle.com/datasets/wordsforthewise/lending-club
 These files contain the latest payment information and all the necessary and appropriate loan data for all the loans issued through 2007-2018 which also includes current loan status (Current, Fully Paid, Late, etc.) The file containing loan data through the "present" contains complete loan data for all loans which are issued through the previous completed calendar quarter. There are certain additional features that include credit scores, addresses including zip codes and states, number of finance inquiries, and various other collections. We have only used the csv file which has details of all Accepted Loans between 2007 and 2018 for this project. The file is a matrix that includes a total of 151 variables (with ‘int_rate’ being our Target label) and about 2260701 observations. Also, The Total Missing Values in Dataset is 108486249. 
 Specifications of the Dataset - 
@@ -71,7 +75,7 @@ We have 105 columns pre-processing of data out of which 13 are Categorical Varia
 Most Categorical Variables are Descriptions while others are Dates i.e., Days of Week and Months.
 Some Numeric Variables are derived based on the values of Other Numeric Variables.
 Now, we have visualized the Dataset with a few charts and graphs post analysis the Dataset.
-Please see Below Visualizations:
+## Please see Below Visualizations:
 1.	Interest Rate Log Distribution and Normal Distribution
 
 ![image](/image/image7.jpg)

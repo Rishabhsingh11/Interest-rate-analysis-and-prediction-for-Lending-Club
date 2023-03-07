@@ -36,7 +36,7 @@ We have followed below steps for Data Cleaning and Pre-processing:
 •	Since then, we've eliminated features with null/NaN values greater than 50%. In order to do this, we made two empty lists and added the columns with more than 50% of null values to columns_with_more_null and the remaining columns to coulmns_with_data, after which we removed the columns with more null values from the DataFrame.
 •	We have then categorized the DataFrame into Numeric Columns and Categorical Columns by using select_dtypes function of a DataFrame. If the dtype is either ‘int64’ or ‘float’ then we will store it in numeric_columns and if dtype is ‘object’ then we will store it in categorical_columns. 
 •	Getting Dummy values for Categorical Columns.
- image\image1.png
+ ![image](image\image1.png)
 
 •	Then we have created a new dataset for removing all null values and getting numerical values across all the Columns. Then, we have used Binary Equivalent value for the term Feature. If the term is ‘36 months’ then the value changes to 0 or else it will be 1
 •	Replacing Strings in emp_length column with numeric value. For this, we have filled zeros if the emp_length is empty or else we have just filled it with the number of years mentioned.

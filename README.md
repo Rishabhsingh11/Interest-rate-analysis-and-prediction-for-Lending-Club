@@ -77,6 +77,7 @@ Please see Below Visualizations:
 ![image](/image/image7.jpg)
 
 2.	Distribution of Loan Amount
+
 ![image](/image/image8.jpg)
  
 3.	Distribution of Loan Status Count, Duration Count, Loan Amount Count
@@ -88,14 +89,17 @@ Please see Below Visualizations:
  ![image](/image/image10.jpg)
 
 5.	Average Interest Rate by Year
+
  ![image](/image/image12.png)
 
 6.	Correlation Matrix 
+
 ![image](/image/image13.jpg)
   
 Result and Analysis:
 
 Coefficient score of lassoCV –
+
  ![image](/image/image14.jpg)
 We have run the below code for all the three algorithms and calculated Average Error, Accuracy, MAPE and RSquare Score:
 error_train = mean_absolute_error(y_train_linear,prediction_train)
@@ -120,13 +124,17 @@ Now, let’s see the score for Each Algorithm used.
  ![image](/image/image15.png)
  
 Fig 1: Residual Diagram for Linear Regression
-image\image16.jpg
+
+![image](/image/image16.jpg)
+
 	Implementing Support Vector Regression:
 
  ![image](/image/image17.png)
  
 Fig 2: Residual Diagram of Support Vector Regression
+
 ![image](/image/image18.png)
+
 	Implementing Random Forest:
  
 ![image](/image/image20.png)

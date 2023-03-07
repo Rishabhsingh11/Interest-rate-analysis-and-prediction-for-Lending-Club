@@ -9,23 +9,23 @@ Group Number – 11
 Rishabh Singh (002743830), 
 Shubham Singh (002762502)
 
-Introduction
+# Introduction
 •	Background: Lending Club is a financial services company headquartered in San Francisco, California. It was the first peer-to-peer lender to register its offerings as securities with the Securities and Exchange Commission (SEC) and to offer loan trading on a secondary market. At its height, Lending Club was the world's largest peer-to-peer lending platform. Interest income benefits investors. Each loan application is given a grade ranging from A1 to E5 and a matching interest rate based on their credit history. Lending Club's business strategy is established by the fact that investors profit from the interest rate and that both investors and borrowers pay a fee to the company. Lending Club probably isn’t the best option for borrowers with bad credit. That would bring a high interest rate and steep origination fee, meaning you could do better with a different type of loan. Lending Club requirements get high marks, but they might not be for everyone. Here are some pros and cons that might help clarify the advantages and disadvantages:
 
-Pros: 
+# Pros: 
 1.	Repayment terms of the loan can be stretched up to three years and five years.
 2.	Lending Club credit score has a minimum acceptance of 600.
 3.	No hard credit inquiry is needed to check rates which comes handy for the customers
 
-Cons:
+# Cons:
 1.	Lending Club money requires a seven-day period to become available whereas there are other places that provide money around in a day.
 2.	Lending Club will provide an interest rate, but part of that is an origination fee, which will cut into your loan.
 3.	You are charged $7 if you pay by check. Late payment fee is 5% or the unpaid instalment amount or $15, whichever is greater.
 •	Motivation: With the rising popularity of peer-to-peer lending platforms in recent years, investors now have easy access to this alternative investment asset class by lending money to individual borrowers through platforms such as Lending Club, Prosper Marketplace, and Upstart, or to small businesses through Funding Circle. The process starts with borrowers submitting loan applications to the platform, which performs credit reviews and either approves or denies each application. Investors should be able to promptly and independently evaluate the credit risk of many listed loans to invest in loans with lower perceived risks. The platform also uses a proprietary model to determine the interest rate of approved loans based on the creditworthiness of borrowers. Approved loans are then listed on the platform for investor funding. Investors usually want to diversify their portfolio by only investing a small amount, e.g. $25, in each loan. Hence, it is desirable for investors to be able to independently evaluate the credit risk of many listed loans quickly and invest in those with lower perceived risks. This motivates us to develop machine-learned classification and regression models, from which we will choose the model with the highest accuracy and lowest MAPE, which can be used to assess and estimate the interest rate using a historical loan dataset from Lending Club.
 
-•	Goal: This project aims to create a machine learning model that can predict the best interest rate for a given set of parameters using transactional loan data from Lending Club.
+# Goal: This project aims to create a machine learning model that can predict the best interest rate for a given set of parameters using transactional loan data from Lending Club.
 
-Methodology
+# Methodology
 To develop the interest rate classification and regression model we need to follow the below-mentioned machine learning process which includes:
 1)	Data Collection: In this step, we looked through many online dataset sources to find the most pertinent dataset that matched the project's goal and had a large enough data set to assist the learning and development of the machine learning model. We have used the Kaggle dataset of Lending Club Loan data. The file is a matrix that includes a total of 151 variables and about 2260701 observations. Also, The Total Missing Values in Dataset is 108486249.The Description of the Dataset will be further explained in details in the next section.
 
@@ -96,7 +96,7 @@ Please see Below Visualizations:
 
 ![image](/image/image13.jpg)
   
-Result and Analysis:
+# Result and Analysis:
 
 Coefficient score of lassoCV –
 
@@ -142,7 +142,7 @@ Fig 2: Residual Diagram of Support Vector Regression
 Fig 3: Residual Diagram of Random Forest
 
 ![image](/image/image21.png)
-Conclusion
+# Conclusion
 After Running the Dataset on all three above mentioned Algorithm’s, the MAPE for each Model were as follows:
 	Linear Regression: 1.8
 	Support Vector Regression: 1.5
